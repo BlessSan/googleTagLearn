@@ -4,9 +4,13 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import TagManager from "react-gtm-module";
+const env = process.env.NODE_ENV;
 
 const tagManagerArgs = {
   gtmId: "GTM-MRZD3KXT",
+  auth:
+    env === "development" ? "BMlPPD-AeFG8IJ2v7Lo8FQ" : "Qz4fQZm6TKhO60lmlXIXdw",
+  preview: env === "development" ? "env-4" : "env-1",
 };
 
 TagManager.initialize(tagManagerArgs);
