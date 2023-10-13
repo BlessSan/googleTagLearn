@@ -13,17 +13,13 @@ function inIframe() {
 
 function App() {
   useEffect(() => {
-    if (inIframe()) {
-      TagManager.dataLayer({
-        dataLayer: {
-          event: "iframe_embedded",
-          referrer: document.referrer,
-        },
-        dataLayerName: "inside-iframe",
-      });
-    }
+    TagManager.dataLayer({
+      dataLayer: {
+        event: "iframe_embedded",
+        referrer: document.referrer,
+      },
+    });
   }, []);
-
   return (
     <div className="App">
       <header className="App-header">
