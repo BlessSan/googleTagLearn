@@ -14,7 +14,10 @@ function inIframe() {
 function App() {
   useEffect(() => {
     if (inIframe()) {
-      const url = window.location.ancestorOrigins[0];
+      const url =
+        window.location !== window.parent.location
+          ? document.referrer
+          : document.location.href;
       TagManager.dataLayer({
         dataLayer: {
           event: "iframe_embedded",
