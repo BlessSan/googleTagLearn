@@ -12,7 +12,7 @@ function App() {
           event: "iframe_embedded",
           referrer: document.referrer,
         },
-        dataLayerName: "inside iframe",
+        dataLayerName: "inside-iframe",
       });
     }
   }, []);
