@@ -3,10 +3,17 @@ import "./App.css";
 import useEffect from "react";
 import TagManager from "react-gtm-module";
 
+function inIframe() {
+  try {
+    return window.self !== window.top;
+  } catch (e) {
+    return true;
+  }
+}
+
 function App() {
   useEffect(() => {
-    const isIframe = window.top !== window.self;
-    if (isIframe) {
+    if (inIframe()) {
       TagManager.dataLayer({
         dataLayer: {
           event: "iframe_embedded",
