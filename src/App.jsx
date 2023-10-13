@@ -3,6 +3,14 @@ import "./App.css";
 import { useEffect } from "react";
 import TagManager from "react-gtm-module";
 
+// function inIframe() {
+//   try {
+//     return window.self !== window.top;
+//   } catch (e) {
+//     return true;
+//   }
+// }
+
 function App() {
   useEffect(() => {
     TagManager.dataLayer({
