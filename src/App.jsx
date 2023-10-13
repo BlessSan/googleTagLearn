@@ -19,7 +19,7 @@ function App() {
         referrer: document.referrer,
       },
     });
-  }, []);
+  });
   return (
     <div className="App">
       <header className="App-header">
