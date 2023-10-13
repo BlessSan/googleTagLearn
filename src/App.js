@@ -1,7 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import useEffect from "react";
+import TagManager from "react-gtm-module";
 
 function App() {
+  useEffect(() => {
+    const isIframe = window.top !== window.self;
+    if (isIframe) {
+      TagManager.dataLayer({
+        dataLayer: {
+          event: "iframe_embedded",
+          referrer: document.referrer,
+        },
+        dataLayerName: "inside iframe",
+      });
+    }
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
