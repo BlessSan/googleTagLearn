@@ -16,7 +16,7 @@ function App() {
     TagManager.dataLayer({
       dataLayer: {
         event: "iframe_embedded",
-        referrer: document.referrer,
+        referrer: document.location.href,
       },
     });
   });
