@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import useEffect from "react";
+import { useEffect } from "react";
 import TagManager from "react-gtm-module";
 
 function inIframe() {
