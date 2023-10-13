@@ -3,23 +3,26 @@ import "./App.css";
 import { useEffect } from "react";
 import TagManager from "react-gtm-module";
 
-// function inIframe() {
-//   try {
-//     return window.self !== window.top;
-//   } catch (e) {
-//     return true;
-//   }
-// }
+function inIframe() {
+  try {
+    return window.self !== window.top;
+  } catch (e) {
+    return true;
+  }
+}
 
 function App() {
   useEffect(() => {
-    TagManager.dataLayer({
-      dataLayer: {
-        event: "iframe_embedded",
-        referrer: document.location.href,
-      },
-    });
+    if (inIframe()) {
+      TagManager.dataLayer({
+        dataLayer: {
+          event: "iframe_embedded",
+          referrer: document.location.href,
+        },
+      });
+    }
   });
+
   return (
     <div className="App">
       <header className="App-header">
